@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.happybirthday.MainActivity">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:src="@drawable/androidparty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/greeting_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Happy Birthday Ben!"
+        android:textIsSelectable="false"
+        android:textColor="@android:color/white"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:fontFamily="sans-serif-light"
+        android:textSize="36sp"  />
+
+    <TextView
+        android:id="@+id/from_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From, Sam"
+        android:textColor="@android:color/white"
+        android:paddingBottom="20dp"
+        android:paddingRight="20dp"
+        android:fontFamily="sans-serif-light"
+        android:textIsSelectable="false"
+        android:textSize="36sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        />
+</RelativeLayout>
