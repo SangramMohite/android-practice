@@ -3,6 +3,8 @@ package com.example.android.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -11,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
     double price = 0.0;
+    boolean isWhippedCreamChecked = false;
+    boolean isChocolateChecked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(double price) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(price));
+    }
+
+    public void onWhippedCreamClicked(View view) {
+        isWhippedCreamChecked = ((CheckBox)view).isChecked();
+    }
+
+    public void onChocolateClicked(View view) {
+        isChocolateChecked = ((CheckBox)view).isChecked();
     }
 
     public void incrementOrder(View view) {
@@ -46,9 +58,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         TextView orderView = (TextView) findViewById(R.id.total_cost_text_view);
-        if (quantity > 0)
-            orderView.setText("" + "The price of " + quantity + " coffees is $" + price);
-        else
+        StringBuffer orderSummary = new StringBuffer();
+        if (quantity > 0) {
+            EditText name = (EditText) findViewById(R.id.name_text_view);
+            orderSummary.append("Name: ").append(name.getText().toString()).append("\n");
+            if (isWhippedCreamChecked)
+                orderSummary.append("Add Whipped Cream?").append(isWhippedCreamChecked).append("\n");
+            if (isChocolateChecked)
+                orderSummary.append("Add Chocolate?").append(isChocolateChecked).append("\n");
+            orderSummary.append("Quantity: ").append(quantity).append("\n");
+            orderSummary.append("Total: $").append(price).append("\n Thank You!");
+            orderView.setText(orderSummary);
+        } else
             orderView.setText("" + "0 coffees selected. Please increase the quantity before placing order");
     }
 
