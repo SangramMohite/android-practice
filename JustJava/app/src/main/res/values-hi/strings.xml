@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Just Java</string>
+    <string name="name_text_view">नाम</string>
+    <string name="toppings">टॉपिंग</string>
+    <string name="whipped_cream">फेटी हुई मलाई</string>
+    <string name="chocolate">चॉकलेट</string>
+    <string name="quantity">मात्रा</string>
+    <string name="price">मूल्य</string>
+    <string name="order_button_view">व्यवस्था</string>
+
+    <string name="order_name">नाम: </string>
+    <string name="order_add_whipped_cream">मार पड़ी है क्रीम जोड़ें?</string>
+    <string name="order_add_chocolate">चॉकलेट जोड?</string>
+    <string name="order_quantity">मात्रा: </string>
+    <string name="order_total_price">कुल: $</string>
+    <string name="order_thank_you">धन्यवाद!</string>
+
+</resources>
